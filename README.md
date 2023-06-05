@@ -1,20 +1,20 @@
 # Credit_Card_Fraud
-Практика навыков Машинного Обучения
+Practice Machine Learning Skills
 
-## Источники
-Датасет был взят с сайта kaggle https://www.kaggle.com/mlg-ulb/creditcardfraud.
+## Sources
+The dataset was taken from the kaggle website https://www.kaggle.com/mlg-ulb/creditcardfraud.
 
-## Препроцессинг
-Данные можно назвать идеальными, т.к. все значения числовые, много параметров, на корреаляционной матрице отчётливо видно, какие из них больше всего влияют на наш target. Было решено убрать колонки, у которых корреляция с целевой колонкой была меньше 0.01, т.к. они просто создавали шум для нашей модели.
+## Preprocessing
+The data can be called ideal, because all values are numeric, there are many parameters, the correlation matrix clearly shows which of them most affect our target. It was decided to remove columns whose correlation with the target column was less than 0.01, because they just created noise for our model.
 
-## Построение модели
-В качестве основы, как и в большинстве моих работ, был взят XGBoost. Он сразу показал неплохие результаты, а настройкой параметров удалось их улучшить ещё немного.
+## Building the model
+As a basis, as in most of my work, XGBoost was taken. It immediately showed good results, and by adjusting the parameters it was possible to improve them a little more.
 
-### Stacking
-Долгое время хотел реализовать этот подход в машинном обучении и вот время пришло:) За основу были взяты классические модели: Логистическая регрессия, Метод опорных векторов, Дерево решений и Метод ближайших соседей. Я также настраивал эти модели вручную до того как прописывать их в StackingClassifier, чтобы получить лучший результат. В качестве мета-модели был взят мой любимый XGBoost, его параметры я настраивал уже по ходу обучения stacked_model.
+###Stacking
+For a long time I wanted to implement this approach in machine learning, and now the time has come :) Classical models were taken as the basis: Logistic regression, Support vector machine, Decision tree and Nearest neighbors. I also tuned these models manually before writing them to the StackingClassifier to get the best result. My favorite XGBoost was taken as a meta-model, I configured its parameters already in the course of training stacked_model.
 
-## Итоги
-Результатом в Roc_Auc ~0.91 и F1_score ~0.89, в целом, доволен. Хотя, конечно, хотелось бы лучше настраивать параметры, например, с помощью Байесовской оптимизации.
-В будущих работах, надеюсь удасться её применить.
+## Results
+Overall, I'm satisfied with the result in Roc_Auc ~0.91 and F1_score ~0.89. Although, of course, I would like to better tune the parameters, for example, using Bayesian optimization.
+In future works, I hope to be able to apply it.
 
-Спасибо за прочтение, надеюсь для вас это было также полезно, как и для меня!
+Thanks for reading, I hope this was as helpful to you as it was to me!
